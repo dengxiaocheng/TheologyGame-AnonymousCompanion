@@ -2,15 +2,142 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>无名的同行者</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
+
+    <!-- 标题屏幕 -->
+    <div id="title-screen">
+        <div class="title-subtitle">叙事RPG</div>
         <h1>无名的同行者</h1>
-        <p>Anonymous Companion</p>
-        <p><em>构建中...</em></p>
+        <div class="title-tagline">在灾难的废墟中，信仰是什么？</div>
+        <div class="title-divider"></div>
+        <button class="btn-start">开始旅程</button>
     </div>
+
+    <!-- 游戏容器 -->
+    <div id="game-container">
+        <div class="game-layout">
+
+            <!-- 属性侧边栏 -->
+            <div id="stats-sidebar">
+                <div class="sidebar-section stats-section">
+                    <!-- 由 JS 动态填充 -->
+                </div>
+                <div class="sidebar-section relations-panel">
+                    <button class="relations-toggle">
+                        <span class="arrow">▸</span> 关系
+                    </button>
+                    <div class="relations-list">
+                        <!-- 由 JS 动态填充 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主内容区 -->
+            <div id="main-content">
+
+                <!-- 顶部栏 -->
+                <div id="top-bar">
+                    <div id="chapter-indicator"></div>
+                    <div id="top-bar-buttons">
+                        <button class="top-btn" id="btn-history">历史</button>
+                        <button class="top-btn" id="btn-save">存档</button>
+                        <button class="top-btn" id="btn-load">读档</button>
+                    </div>
+                </div>
+
+                <!-- 对话区域 -->
+                <div id="dialogue-area" class="dialogue">
+                    <button id="btn-history-icon" class="dialogue-icon-btn" title="历史">☰</button>
+                    <div id="dialogue-content">
+                        <!-- 由 JS 动态填充 -->
+                    </div>
+                </div>
+
+                <!-- 选择区域 -->
+                <div id="choice-area">
+                    <div id="choice-list">
+                        <!-- 由 JS 动态填充 -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 移动端属性抽屉 -->
+            <div id="mobile-stats-drawer" class="mobile-only">
+              <button class="mobile-stats-toggle">属性 ▾</button>
+              <div class="mobile-stats-content"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 继续指示器 -->
+    <div id="continue-indicator">点击继续 ▾</div>
+
+    <!-- 章节过渡 -->
+    <div id="chapter-overlay">
+        <div class="chapter-number"></div>
+        <div class="chapter-title"></div>
+        <div class="chapter-divider"></div>
+    </div>
+
+    <!-- 结局屏幕 -->
+    <div id="ending-screen">
+        <div class="ending-type"></div>
+        <div class="ending-title"></div>
+        <div class="ending-text"></div>
+        <div class="ending-stats"></div>
+        <div class="ending-actions">
+            <button class="ending-btn" id="btn-restart">重新开始</button>
+            <button class="ending-btn" id="btn-ending-stats">查看统计</button>
+        </div>
+    </div>
+
+    <!-- 存档/读档模态框 -->
+    <div id="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-title">存档</h3>
+                <button class="modal-close">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- 由 JS 动态填充 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 历史面板 -->
+    <div id="history-panel">
+        <div class="panel-header">
+            <h3>对话历史</h3>
+            <button class="modal-close" id="btn-close-history">✕</button>
+        </div>
+        <div id="history-list">
+            <!-- 由 JS 动态填充 -->
+        </div>
+    </div>
+
+    <!-- 脚本加载 -->
+    <script src="js/stats-system.js"></script>
+    <script src="js/character-system.js"></script>
+    <script src="js/story-engine.js"></script>
+    <script src="js/dialogue-renderer.js"></script>
+    <script src="js/choice-system.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/save-system.js"></script>
+    <script src="js/ending-system.js"></script>
+    <script src="js/chapter1.js"></script>
+    <script src="js/chapter2.js"></script>
+    <script src="js/chapter3.js"></script>
+    <script src="js/chapter4.js"></script>
+    <script src="js/chapter5.js"></script>
+    <script src="js/chapter6.js"></script>
+    <script src="js/story-data.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>
